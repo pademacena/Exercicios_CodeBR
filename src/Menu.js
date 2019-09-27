@@ -5,10 +5,36 @@ import Simples from './componentes/Simples'
 import ParImpar from './componentes/ParImpar'
 import { Inverter, MegaSena } from './componentes/Multi'
 import Contador from './componentes/Contador'
+import Plataformas from './componentes/Plataforma'
+import ValidarProps from './componentes/ValidarProps'
+import Evento from './componentes/Evento'
+import { Avo } from './componentes/ComunicacaoDireta'
+import TextoSincronizado from './componentes/ComunicacaoIndireta'
+import ListaFlex from './componentes/ListaFlex'
 
 export default createDrawerNavigator({
+    ListaFlex: {
+        screen: ListaFlex,
+        navigationOptions: { title: 'Lista (Flex Box)' }
+    },
+    TextoSincronizado: {
+        screen: TextoSincronizado,
+        navigationOptions: { title: 'Texto Sincronizado' }
+    },
+    Avo: {
+        screen: () => <Avo nome='Joao' sobrenome='Silva'/>
+    },
+    Evento: {
+        screen: Evento
+    },
+    ValidarProps: {
+        screen: () => <ValidarProps label='Teste: ' ano={55} />
+    },
+    Plataformas: {
+        screen: Plataformas
+    },
     Contador: {
-        screen: () => <Contador numeroInicial={100}/>
+        screen: () => <Contador numeroInicial={1000}/>
     },
     MegaSena: {
         screen: () => <MegaSena numero={8} />,
